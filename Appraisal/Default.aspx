@@ -15,7 +15,7 @@
 
 <form id="form1" runat="server">
   
-<asp:Panel ID="LoginPNL" runat="server">
+<asp:Panel ID="LoginPNL" runat="server"> 
   <table border="0" style="width:100%;">
    <tr><td colspan="2" style="height:20px;">&nbsp;</td></tr>
        <tr><td colspan="2" style="text-align:center;"><img  src="images/TopBanner1.png" alt="images/TopBanner1.png" style="height: 119px; width: 843px" /></td></tr>
