@@ -9,7 +9,7 @@
 
 <link href="StyleSheet1.css" rel="stylesheet"/>
 
-</head>
+</head>    
 
 <body>
 
