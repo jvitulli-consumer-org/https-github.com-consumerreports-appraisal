@@ -1,0 +1,245 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MidPoint.aspx.vb" Inherits="Appraisal.MidPoint" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Mid Point Conversation Form</title>
+ 
+<link href="../../StyleSheet1.css" rel="stylesheet" />
+        
+    <style type="text/css">
+       .Style1 {
+          text-align:center;
+          font-size:x-large;
+          font-weight:bold;
+          color: #00ae4d;
+          font-family:Calibri;
+          }
+       .Style2 {
+          text-align: center;
+          font-size: large;
+          font-weight: bold;
+          font-family:Calibri;
+          height: 30px;
+          }
+       .Style3 {
+          font-size:large;
+          font-weight:bold;
+          font-family:Calibri;
+          height:30px;
+          }
+       .style4 {
+          width: 100px;
+          text-align:left;
+          font-family:Calibri;
+          font-weight:bold
+          }
+       .style5 {
+          width: 55px;
+          text-align:right;
+          font-family:Calibri;
+          }
+       .style6 {
+          width: 220px;
+          text-align:left;
+          font-family:Calibri;
+          }
+        .style7 {
+          width: 500px;
+          font-family:Calibri;
+          }
+        .style8 {
+          width: 300px;
+          font-family:Calibri;
+          white-space:nowrap;
+          }
+        .style9 {
+          width: 20%;
+          background-color:#E7E8E3;
+          font-family:Calibri;
+          }
+       .style10 {
+          width: 5%;
+          background-color:#E7E8E3;
+          font-family:Calibri;
+          }
+       .style11 {
+          font-weight:bold; 
+          background-color:#E7E8E3;
+          font-family:Calibri;
+          }
+       .style12 {
+          width: 240px;
+          text-align: left;
+          font-family:Calibri;
+          }
+       .style13 {
+          font-weight: normal;
+          font-size:medium;
+          color:black;
+          font-family:Calibri;
+          }
+      .style16  {
+        width:2%;
+        vertical-align:top;
+        font-family:Calibri;
+        }
+     .mycheckBig input {
+         width:30px; 
+         height:30px;
+     } 
+    .mycheckSmall  input {
+        width:10px; 
+        height:10px;
+    } 
+        .auto-style1 {
+            width: 83%;
+        }
+    </style>
+
+<script type="text/javascript">
+    //-------------------------------------------
+    function showMe(box) {
+
+        var chboxs = document.getElementsByName("c1");
+        var vis = "none";
+        var vis1 = "block";
+
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+        //document.getElementById("CheckImg")
+    }
+
+    //-----------------------------------------------
+    function checkBox1OnClick(elementRef) {
+        if (elementRef.checked) {
+            if (window.confirm('Are you sure?') == false)
+                elementRef.checked = false;
+        }
+    }
+    // --> - See more at: http://codeverge.com/asp.net.client-side/return-confirm-on-checkbox/266439#sthash.lBLLSA0G.dpuf
+
+    //----------------------------------------------------
+    function chbx(obj) {
+        var that = obj;
+        if (document.getElementById(that.id).checked == true) {
+            document.getElementById('CheckBox_Met').checked = false;
+            document.getElementById('CheckBox_NotMet').checked = false;
+            document.getElementById(that.id).checked = true;
+        }
+    }
+    //----------------------------------------------------
+</script>
+
+</head>
+<body>
+<form id="form1" runat="server">
+
+<asp:label id="lblEMPLID" runat="server" Text="" Visible="false"/>
+<asp:label id="lblLogin_EMPLID" runat="server" Text="" Visible="false"/>
+<asp:label id="lblGUILD_EMAIL" runat="server" Text="" Visible="false"/>
+<asp:label id="lblSUP_EMPLID" runat="server" Text="" Visible="false"/>
+<asp:label id="lblSUP_EMAIL" runat="server" Text="" Visible="false"/>
+<asp:label id="lblUP_MGT_EMPLID" runat="server" Visible="false"/>
+<asp:label id="lblUP_MGT_EMAIL" runat="server" Visible="false"/>
+<asp:label id="lblHR_EMPLID" runat="server" Visible="false"/>
+<asp:label id="lblHR_EMAIL" runat="server" Visible="false"/>
+
+
+<table border="0" style="width:100%">
+    <tr><td colspan="6" style="text-align:center;"><img alt="../../images/CR_logo.png" src="../../images/CR_logo.png" style="width: 380px; height:60px" /></td></tr>
+    <tr><td colspan="6" class="Style1"><u>FY<asp:Label ID="lblMidPoint_Year" runat="server" ForeColor="#00ae4d" CssClass="Label_StyleSheet"/> Mid Point Conversation Acknowledgement</u></td></tr>
+    <tr><td colspan="6" style="height:40px;">&nbsp;&nbsp;</td></tr>
+    <tr><td style="width:15%">&nbsp;</td>
+        <td class="style4"><b>Name</b></td><td class="style7"><asp:label id="lblEMPLOYEE_NAME" runat="server" Font-Names="Calibri"/></td>
+        <td class="style12"><b>Manager Name:</b></td><td class="style8"><asp:label id="LblMgr_NAME" runat="server" Font-Names="Calibri"/></td><td style="width:15%"></td></tr>
+    <tr><td style="width:15%"></td>
+        <td class="style4"><b>Title:</b></td><td class="style7"><asp:label id="lblEMPLOYEE_TITLE" runat="server" Font-Names="Calibri"/></td>
+        <td class="style12"><b>2nd Level Manager Name:</b></td><td class="style8"><asp:Label ID="lblMGR_UP_NAME" runat="server" Font-Names="Calibri"/></td><td style="width:15%"></td></tr>
+    <tr><td style="width:15%"></td>
+        <td class="style4"><b>Department:</b></td><td class="style7"><asp:label id="lblEMPLOYEE_DEPT" runat="server" Font-Names="Calibri" /></td>
+        <td class="style12"><b>Human Resources Generalist:</b></td><td class="style8"><asp:Label ID="lblGENERALIST_NAME" runat="server" Font-Names="Calibri"/></td><td style="width:15%"></td></tr>
+    <tr><td style="width:15%"></td>
+        <td class="style4">Hire Date:</td><td><asp:label id="lblEMPLOYEE_HIRE" runat="server" Text="" Font-Names="Calibri"/></td>
+        <td class="style12"><b>Time Stamp(when signed):</b></td><td class="style8"><asp:label id="lblTimeStamp" runat="server" Font-Names="Calibri" /></td><td style="width:15%"></td></tr>
+    <tr><td colspan="6" style="height:25px;">   </td></tr>
+    <tr><td></td><td colspan="4" class="Style3"><u>Acknowledgement:</u></td><td></td></tr>
+<!--<tr><td></td><td></td><td></td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td></tr>-->
+ 
+    <tr><td>&nbsp;&nbsp;</td>
+        <td style="height:80px;vertical-align:middle;">
+           <asp:CheckBox ID="CheckBox_Met" runat="server" class="mycheckBig" AutoPostBack="true" OnCheckedChanged="Confirm_CheckedChanged" Visible="false"/>
+                <img id="CheckImg" runat="server" alt="images/CheckRed1.png" src="../../images/CheckGreen.png" Visible="false" />
+                <img id="CheckBlank" runat="server" alt="images/CheckBlank.png" src="../../images/CheckBlank.png" Visible="false"/></td>
+        <td colspan="3" style="font-size:large; font-family:Calibri">
+
+<table id="tblSelectDate" border="0" style="height:70px" runat="server">
+    <tr><td class="auto-style1" nowrap="nowrap">
+        <asp:label id="lblNot_Met" runat="server" Width="100%" Borderstyle="None" Font-Names="Calibri" Font-Size="large" ForeColor="Red"  Visible="false"/> 
+        <asp:label id="lbl_Met" runat="server" Width="100%" Borderstyle="None" Font-Names="Calibri" Font-Size="Medium" Visible="false"/> 
+        </td>
+        <td><asp:Panel ID="Cal_Mgr" runat="server">
+<asp:TextBox ID="txtCal" runat="server" Width="70px" BorderStyle="Solid" BorderColor="Silver" ReadOnly="true" class="TextBox_StyleSheet"/>
+            <asp:ImageButton ID="imgCal" runat="server" ImageUrl="../../Images/calendar.png" style="height:20px" />
+<div id="divCalendar" style="position:absolute;">
+<asp:Calendar id="Calendar1" runat="server" BorderWidth="2px" BackColor="White" Width="200px" ForeColor="Black" Height="180px" Font-Size="11pt" Font-Names="Calibri"  Visible="false"
+BorderColor="#999999" BorderStyle="Outset" DayNameFormat="FirstLetter" CellPadding="4" >
+<TodayDayStyle ForeColor="Black" BackColor="#CCCCCC"></TodayDayStyle><SelectorStyle BackColor="#CCCCCC"></SelectorStyle><NextPrevStyle VerticalAlign="Bottom"></NextPrevStyle>
+<DayHeaderStyle Font-Size="7pt" Font-Bold="True" BackColor="#CCCCCC"></DayHeaderStyle><SelectedDayStyle Font-Bold="True" ForeColor="White" BackColor="#666666"></SelectedDayStyle>
+<TitleStyle Font-Bold="True" BorderColor="Black"  BackColor="#999999"></TitleStyle><WeekendDayStyle BackColor="#FFFFCC"></WeekendDayStyle><OtherMonthDayStyle ForeColor="#808080"></OtherMonthDayStyle>
+</asp:Calendar></div>
+</asp:Panel>
+
+</td></tr></table>
+
+<table id="tblConfirmDate" border="0"  style="height:70px" runat="server" visible="false">
+    <tr><td style="width:80%">I confirm that <strong>I have met</strong> with my manager to have a mid point performance conversation on <asp:Label ID="lblDate" runat="server"/>. </td></tr></table>
+<table id="tblConfirmDate1" border="0"  style="height:70px" runat="server" visible="false">
+    <tr><td style="width:80%">I confirm that <strong>I have met</strong> with my manager to have a mid point performance conversation on <asp:Label ID="lblDate2" runat="server"/>. </td></tr></table>
+
+    </td><td></td></tr>
+
+<asp:Panel ID="Panel_NotMet" runat="server" Visible="false">
+    <tr><td>&nbsp;&nbsp;</td>
+        <td style="height:80px; vertical-align:middle;">
+             <asp:CheckBox ID="CheckBox_NotMet" runat="server" class="mycheckBig"  AutoPostBack="true" OnCheckedChanged="Confirm_CheckedChanged1" Visible="false"/>
+             <img id="CheckImg1" runat="server" alt="images/CheckRed1.png" src="../../images/CheckGreen.png" Visible="false" />
+             <img id="CheckBlank1" runat="server" alt="images/CheckBlank.png" src="../../images/CheckBlank.png" Visible="false" /></td>
+        <td colspan="3" style="font-size:large; font-family:Calibri; color:red;"><strong>I have not met</strong> with my manager to have a mid point performance conversation. <asp:Label ID="lblDate1" runat="server"/></td><td></td></tr>
+</asp:Panel>   
+
+<asp:Panel ID="Com" runat="server">
+<tr><td>&nbsp;&nbsp;</td><td colspan="4">
+    <div style="font-size:medium; font-family:Calibri; color:gray;">Comments <i>(optional)</i>:</div>
+    <asp:TextBox ID="Comments" runat="server" Width="100%" TextMode="MultiLine" Rows="5" style="overflow:auto; border-color:LightGray; font-family:Calibri; border-width:1px;" ValidateRequestMode="Disabled"/></td><td>&nbsp;&nbsp;</td></tr>
+</asp:Panel>
+
+<asp:Panel ID="Com1" runat="server" visible="false">
+<tr><td>&nbsp;&nbsp;</td>
+    <td colspan="4" >
+        <div style="font-size:medium; font-family:Calibri; color:gray;">Comments <i>(optional)</i>:</div></td><td>&nbsp;&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+    <td colspan="4">
+        <asp:label id="lblComments" runat="server" Visible="false"/><%= lblComments.Text%></td><td>&nbsp;&nbsp;</td></tr>
+</asp:Panel>
+
+    <tr><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
+    <tr><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
+    <tr><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
+    <tr><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
+    <tr><td colspan="6" style="text-align:center;">       
+        <asp:Button ID="Button1" Text="Close" runat="server" style="border-style:none; color:Blue; width:120px; font-weight:bold; cursor: pointer;" 
+            CssClass="Button_StyleSheet" OnClientClick="javascript:window.open('','_self',''); window.close(); return false;" />
+        <!--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="../../Images/Back_button.png" style="width:90px" Visible="false" />-->
+        </td></tr>
+</table>
+
+  </form>
+ </body>
+</html>

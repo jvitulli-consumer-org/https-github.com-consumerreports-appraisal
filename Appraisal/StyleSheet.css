@@ -1,0 +1,27 @@
+﻿body {
+   font-family:Calibri;
+}
+table {
+   font-family:Calibri;
+   width:100%;
+}
+td {
+   font-family:Calibri;
+}
+.TextBox_StyleSheet {
+   font-family:Calibri;
+  }
+.DropDown_StyleSheet {
+   font-family:Calibri;
+    height: 21px;
+}
+.Button_StyleSheet {
+   font-family:Calibri;
+}
+.Label_StyleSheet {
+   font-family:Calibri;
+}
+.Grid_StyleSheet{
+   font-family:Calibri;
+}
+

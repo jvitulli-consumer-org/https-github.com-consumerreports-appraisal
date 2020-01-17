@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{5B87AFDF-C5A6-495D-AB57-7A57B86A7527}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Appraisal</RootNamespace>
+    <AssemblyName>Appraisal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Appraisal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Appraisal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Defaults.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Default_Appaisal.aspx" />
+    <Content Include="Default_HR.aspx" />
+    <Content Include="Default_Manager.aspx" />
+    <Content Include="images\arrowback.gif" />
+    <Content Include="images\Back_button.png" />
+    <Content Include="images\Calendar.png" />
+    <Content Include="images\CheckBlank.png" />
+    <Content Include="images\CheckGreen.png" />
+    <Content Include="images\CheckRed.png" />
+    <Content Include="images\CheckRed1.png" />
+    <Content Include="images\Critical.png" />
+    <Content Include="images\CR_logo.png" />
+    <Content Include="images\Help.png" />
+    <Content Include="images\Info.png" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\logo_CRnet.png" />
+    <Content Include="images\logo_CRnet_TMS.png" />
+    <Content Include="images\PageUnderConstraction.jpg" />
+    <Content Include="images\print.png" />
+    <Content Include="images\TopBanner1.png" />
+    <Content Include="images\UnderConstraction.jpg" />
+    <Content Include="images\UnderDevelopment.png" />
+    <Content Include="Logon.aspx" />
+    <Content Include="Retro\Exempt\Manager_Waiting_Approval.aspx" />
+    <Content Include="Retro\Exempt\My_Appraisal.aspx" />
+    <Content Include="Retro\Guild\GuildReview.aspx" />
+    <Content Include="Retro\Guild\Guild_FutureGoal.aspx" />
+    <Content Include="Retro\Guild\Guild_MidPoint.aspx" />
+    <Content Include="Retro\Guild\Guild_Waiting_Approval.aspx" />
+    <Content Include="Staff\Appraisal\Appraisal.aspx" />
+    <Content Include="Staff\Appraisal\AppraisalHR_Review.aspx" />
+    <Content Include="Staff\Appraisal\Appraisal_print.aspx" />
+    <Content Include="Staff\Appraisal\Appraisal_Edit.aspx" />
+    <Content Include="Staff\Exempt\Appraisal.aspx" />
+    <Content Include="Staff\Exempt\Appraisal_Print.aspx" />
+    <Content Include="Staff\FutureGoals\FutureGoals.aspx" />
+    <Content Include="Staff\FutureGoals\FutureGoals_History.aspx" />
+    <Content Include="Staff\FutureGoals\FutureGoal_Print.aspx" />
+    <Content Include="Staff\FutureGoals\FutureGoals_Print.aspx" />
+    <Content Include="Staff\FutureGoals\Goals_Print.aspx" />
+    <Content Include="Staff\FutureGoals\myEmpGoals.aspx" />
+    <Content Include="Staff\FutureGoals\myGoals.aspx" />
+    <Content Include="Staff\Guild\Appraisal.aspx" />
+    <Content Include="Staff\Guild\Appraisal_Print.aspx" />
+    <Content Include="Staff\FutureGoals\FutureGoal.aspx" />
+    <Content Include="Staff\Guild\MidPoint.aspx" />
+    <Content Include="Staff\HR\Access_Employees.aspx" />
+    <Content Include="Staff\HR\Access_Employees_History.aspx" />
+    <Content Include="Staff\HR\Appraisal1.aspx" />
+    <Content Include="Staff\HR\MidPoint_Excel.aspx" />
+    <Content Include="Staff\HR\Appraisal_Reports.aspx" />
+    <Content Include="Staff\HR\Appraisal_Reports_Excel.aspx" />
+    <Content Include="Staff\HR\Appraisal_Reports_Redirect.aspx" />
+    <Content Include="Staff\HR\BulkPrint\Default_Print.aspx" />
+    <Content Include="Staff\HR\BulkPrint\Print_Appraisal.aspx" />
+    <Content Include="Staff\HR\BulkPrint\Print_Goals.aspx" />
+    <Content Include="Staff\HR\BulkPrint\Print_MidPoint.aspx" />
+    <Content Include="Staff\HR\FutureGoals1.aspx" />
+    <Content Include="Staff\HR\FutureGoals1_History.aspx" />
+    <Content Include="Staff\HR\Goals_Reports.aspx" />
+    <Content Include="Staff\HR\Guild_Appraisal.aspx" />
+    <Content Include="Staff\HR\Guild_Appraisal1.aspx" />
+    <Content Include="Staff\HR\Guild_MidPoints.aspx" />
+    <Content Include="Staff\HR\Manager_Appraisal.aspx" />
+    <Content Include="Staff\HR\Manager_Appraisal1.aspx" />
+    <Content Include="Staff\HR\MidPoint_Reports.aspx" />
+    <Content Include="Staff\HR\StatusReport\Status_Report.aspx" />
+    <Content Include="StyleSheet1.css" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\CUSharedLocalClass.vb" />
+    <Compile Include="Defaults.aspx.designer.vb">
+      <DependentUpon>Defaults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Defaults.aspx.vb">
+      <DependentUpon>Defaults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\LogonClass.vb" />
+    <Compile Include="Default_Appaisal.aspx.designer.vb">
+      <DependentUpon>Default_Appaisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default_Appaisal.aspx.vb">
+      <DependentUpon>Default_Appaisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default_HR.aspx.designer.vb">
+      <DependentUpon>Default_HR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default_HR.aspx.vb">
+      <DependentUpon>Default_HR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default_Manager.aspx.designer.vb">
+      <DependentUpon>Default_Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default_Manager.aspx.vb">
+      <DependentUpon>Default_Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logon.aspx.designer.vb">
+      <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logon.aspx.vb">
+      <DependentUpon>Logon.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Retro\Exempt\Manager_Waiting_Approval.aspx.designer.vb">
+      <DependentUpon>Manager_Waiting_Approval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retro\Exempt\Manager_Waiting_Approval.aspx.vb">
+      <DependentUpon>Manager_Waiting_Approval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retro\Exempt\My_Appraisal.aspx.designer.vb">
+      <DependentUpon>My_Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retro\Exempt\My_Appraisal.aspx.vb">
+      <DependentUpon>My_Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retro\Guild\GuildReview.aspx.designer.vb">
+      <DependentUpon>GuildReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retro\Guild\GuildReview.aspx.vb">
+      <DependentUpon>GuildReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retro\Guild\Guild_FutureGoal.aspx.designer.vb">
+      <DependentUpon>Guild_FutureGoal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retro\Guild\Guild_FutureGoal.aspx.vb">
+      <DependentUpon>Guild_FutureGoal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retro\Guild\Guild_MidPoint.aspx.designer.vb">
+      <DependentUpon>Guild_MidPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retro\Guild\Guild_MidPoint.aspx.vb">
+      <DependentUpon>Guild_MidPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retro\Guild\Guild_Waiting_Approval.aspx.designer.vb">
+      <DependentUpon>Guild_Waiting_Approval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retro\Guild\Guild_Waiting_Approval.aspx.vb">
+      <DependentUpon>Guild_Waiting_Approval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Appraisal\Appraisal.aspx.designer.vb">
+      <DependentUpon>Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Appraisal\Appraisal.aspx.vb">
+      <DependentUpon>Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Appraisal\AppraisalHR_Review.aspx.designer.vb">
+      <DependentUpon>AppraisalHR_Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Appraisal\AppraisalHR_Review.aspx.vb">
+      <DependentUpon>AppraisalHR_Review.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Appraisal\Appraisal_print.aspx.designer.vb">
+      <DependentUpon>Appraisal_print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Appraisal\Appraisal_print.aspx.vb">
+      <DependentUpon>Appraisal_print.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Appraisal\Appraisal_Edit.aspx.designer.vb">
+      <DependentUpon>Appraisal_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Appraisal\Appraisal_Edit.aspx.vb">
+      <DependentUpon>Appraisal_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Appraisal\MessageBoxButtons.vb" />
+    <Compile Include="Staff\Exempt\Appraisal.aspx.designer.vb">
+      <DependentUpon>Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Exempt\Appraisal.aspx.vb">
+      <DependentUpon>Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Exempt\Appraisal_Print.aspx.designer.vb">
+      <DependentUpon>Appraisal_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Exempt\Appraisal_Print.aspx.vb">
+      <DependentUpon>Appraisal_Print.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoals.aspx.designer.vb">
+      <DependentUpon>FutureGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoals.aspx.vb">
+      <DependentUpon>FutureGoals.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoals_History.aspx.designer.vb">
+      <DependentUpon>FutureGoals_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoals_History.aspx.vb">
+      <DependentUpon>FutureGoals_History.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoal_Print.aspx.designer.vb">
+      <DependentUpon>FutureGoal_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoal_Print.aspx.vb">
+      <DependentUpon>FutureGoal_Print.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoals_Print.aspx.designer.vb">
+      <DependentUpon>FutureGoals_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoals_Print.aspx.vb">
+      <DependentUpon>FutureGoals_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\Goals_Print.aspx.designer.vb">
+      <DependentUpon>Goals_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\Goals_Print.aspx.vb">
+      <DependentUpon>Goals_Print.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\myEmpGoals.aspx.designer.vb">
+      <DependentUpon>myEmpGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\myEmpGoals.aspx.vb">
+      <DependentUpon>myEmpGoals.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\myGoals.aspx.designer.vb">
+      <DependentUpon>myGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\myGoals.aspx.vb">
+      <DependentUpon>myGoals.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Guild\Appraisal.aspx.designer.vb">
+      <DependentUpon>Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Guild\Appraisal.aspx.vb">
+      <DependentUpon>Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Guild\Appraisal_Print.aspx.designer.vb">
+      <DependentUpon>Appraisal_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Guild\Appraisal_Print.aspx.vb">
+      <DependentUpon>Appraisal_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoal.aspx.designer.vb">
+      <DependentUpon>FutureGoal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\FutureGoals\FutureGoal.aspx.vb">
+      <DependentUpon>FutureGoal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Guild\MidPoint.aspx.designer.vb">
+      <DependentUpon>MidPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Guild\MidPoint.aspx.vb">
+      <DependentUpon>MidPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Access_Employees.aspx.designer.vb">
+      <DependentUpon>Access_Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Access_Employees.aspx.vb">
+      <DependentUpon>Access_Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Access_Employees_History.aspx.designer.vb">
+      <DependentUpon>Access_Employees_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Access_Employees_History.aspx.vb">
+      <DependentUpon>Access_Employees_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal1.aspx.designer.vb">
+      <DependentUpon>Appraisal1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal1.aspx.vb">
+      <DependentUpon>Appraisal1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\MidPoint_Excel.aspx.designer.vb">
+      <DependentUpon>MidPoint_Excel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\MidPoint_Excel.aspx.vb">
+      <DependentUpon>MidPoint_Excel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal_Reports.aspx.designer.vb">
+      <DependentUpon>Appraisal_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal_Reports.aspx.vb">
+      <DependentUpon>Appraisal_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal_Reports_Excel.aspx.designer.vb">
+      <DependentUpon>Appraisal_Reports_Excel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal_Reports_Excel.aspx.vb">
+      <DependentUpon>Appraisal_Reports_Excel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal_Reports_Redirect.aspx.designer.vb">
+      <DependentUpon>Appraisal_Reports_Redirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Appraisal_Reports_Redirect.aspx.vb">
+      <DependentUpon>Appraisal_Reports_Redirect.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Default_Print.aspx.designer.vb">
+      <DependentUpon>Default_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Default_Print.aspx.vb">
+      <DependentUpon>Default_Print.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Print_Appraisal.aspx.designer.vb">
+      <DependentUpon>Print_Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Print_Appraisal.aspx.vb">
+      <DependentUpon>Print_Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Print_Goals.aspx.designer.vb">
+      <DependentUpon>Print_Goals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Print_Goals.aspx.vb">
+      <DependentUpon>Print_Goals.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Print_MidPoint.aspx.designer.vb">
+      <DependentUpon>Print_MidPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\BulkPrint\Print_MidPoint.aspx.vb">
+      <DependentUpon>Print_MidPoint.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\FutureGoals1.aspx.designer.vb">
+      <DependentUpon>FutureGoals1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\FutureGoals1.aspx.vb">
+      <DependentUpon>FutureGoals1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\FutureGoals1_History.aspx.designer.vb">
+      <DependentUpon>FutureGoals1_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\FutureGoals1_History.aspx.vb">
+      <DependentUpon>FutureGoals1_History.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Goals_Reports.aspx.designer.vb">
+      <DependentUpon>Goals_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Goals_Reports.aspx.vb">
+      <DependentUpon>Goals_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Guild_Appraisal.aspx.designer.vb">
+      <DependentUpon>Guild_Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Guild_Appraisal.aspx.vb">
+      <DependentUpon>Guild_Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Guild_Appraisal1.aspx.designer.vb">
+      <DependentUpon>Guild_Appraisal1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Guild_Appraisal1.aspx.vb">
+      <DependentUpon>Guild_Appraisal1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Guild_MidPoints.aspx.designer.vb">
+      <DependentUpon>Guild_MidPoints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Guild_MidPoints.aspx.vb">
+      <DependentUpon>Guild_MidPoints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Manager_Appraisal.aspx.designer.vb">
+      <DependentUpon>Manager_Appraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Manager_Appraisal.aspx.vb">
+      <DependentUpon>Manager_Appraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\Manager_Appraisal1.aspx.designer.vb">
+      <DependentUpon>Manager_Appraisal1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\Manager_Appraisal1.aspx.vb">
+      <DependentUpon>Manager_Appraisal1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\MidPoint_Reports.aspx.designer.vb">
+      <DependentUpon>MidPoint_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\MidPoint_Reports.aspx.vb">
+      <DependentUpon>MidPoint_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\HR\StatusReport\Status_Report.aspx.designer.vb">
+      <DependentUpon>Status_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\HR\StatusReport\Status_Report.aspx.vb">
+      <DependentUpon>Status_Report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\Appraisal.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58834</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58834/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
